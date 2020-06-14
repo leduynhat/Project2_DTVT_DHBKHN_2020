@@ -9,6 +9,7 @@
 - AVR development kit 
 - SPI usb for AVR
 - ATmega16 hoặc ATmega32 hoặc ATmega8  
+
 Kít phát triển được cung cấp bởi phòng thực hành bộ môn. Các bạn hãy hàn và kiểm tra cẩn thận. Nhớ để nhiệt độ mối hàn vừa phải đừng vượt quá 350 độ (do chất lượng PCB không được tốt nên phần via dễ bị bong tróc trong khi hàn). 
  Chip Atmega thì bạn có thể chọn một trong 3 loại trên do chân chúng giống nhau, chỉ khác về dung lượng bộ nhớ flash và RAM. Nêu bạn là sinh viên nghèo và có sẵn một trong 3 con trên thì nên dùng luôn
 ## AVR studio code 
@@ -26,7 +27,7 @@ https://drive.google.com/file/d/10oluqVDh33vJdvhIH5wNsJM9OomuUOwH/view?usp=shari
 2. Mở ứng dụng AVR studio code lên open->'AVR_Kit_Test.cproj'
 3. Ấn build (F7) 
 4. Cắm usb và máy tính, kết nối phần header còn lại với kit đông thời mở Progisp lên
-5. Làm theo hướng dẫn nạp code tại đây: 
+5. Làm theo hướng dẫn nạp code tại đây: http://dammedientu.vn/huong-dan-cach-nap-chuong-trinh-cho-atmega8-16-32-voi-mach-nap-usbisp-bid13-html/
 
 # Lỗi thường gặp
 ## Nạp code mà mạch không chạy

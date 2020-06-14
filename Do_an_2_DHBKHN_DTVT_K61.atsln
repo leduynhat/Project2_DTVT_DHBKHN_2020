@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# AvrStudio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Do_an_2_DHBKHN_DTVT_K61", "Do_an_2_DHBKHN_DTVT_K61\Do_an_2_DHBKHN_DTVT_K61.cproj", "{33F44564-E33C-4B41-B314-286961749B25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33F44564-E33C-4B41-B314-286961749B25}.Debug|AVR.ActiveCfg = Debug|AVR
+		{33F44564-E33C-4B41-B314-286961749B25}.Debug|AVR.Build.0 = Debug|AVR
+		{33F44564-E33C-4B41-B314-286961749B25}.Release|AVR.ActiveCfg = Release|AVR
+		{33F44564-E33C-4B41-B314-286961749B25}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

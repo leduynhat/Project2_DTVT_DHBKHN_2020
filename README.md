@@ -1,14 +1,14 @@
 # Project2_DTVT_DHBKHN_2020
- Đây là tài liệu code avr cho đồ án II viện Điên tử Viễn thông thuộc đại học Bach khoa Hà Nội năm 2020
+ Đây là tài liệu code avr cho đồ án II viện Điên tử Viễn thông thuộc đại học Bach khoa Hà Nội năm 2020.
 # Giới thiệu
- 13/06/2020
+ 13/06/2020  
 Đây là git repo chứa dữ liệu đồ án 2 viện Điện tử viễn thông thuộc đại học Bách Khoa Hà Nội. Nôi dung đồ án 2 này mới được áp dụng từ năm 2019. 
- Code được cung cấp từ hướng dẫn và có chỉnh sửa lại một chút do thói quen code của và lỗi mình phát hiện được
+ Code được cung cấp từ hướng dẫn và có chỉnh sửa lại một chút do thói quen code của và lỗi mình phát hiện được.
 # Chuẩn bị
 ## Phần cứng 
 - AVR development kit 
 - SPI usb for AVR
-- ATmega16 hoặc ATmega32 hoặc ATmega8
+- ATmega16 hoặc ATmega32 hoặc ATmega8  
 Kít phát triển được cung cấp bởi phòng thực hành bộ môn. Các bạn hãy hàn và kiểm tra cẩn thận. Nhớ để nhiệt độ mối hàn vừa phải đừng vượt quá 350 độ (do chất lượng PCB không được tốt nên phần via dễ bị bong tróc trong khi hàn). 
  Chip Atmega thì bạn có thể chọn một trong 3 loại trên do chân chúng giống nhau, chỉ khác về dung lượng bộ nhớ flash và RAM. Nêu bạn là sinh viên nghèo và có sẵn một trong 3 con trên thì nên dùng luôn
 ## AVR studio code 

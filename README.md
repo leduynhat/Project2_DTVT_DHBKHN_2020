@@ -33,5 +33,5 @@ https://drive.google.com/file/d/10oluqVDh33vJdvhIH5wNsJM9OomuUOwH/view?usp=shari
  Kiểm tra lại các mối hàn, đặc biệt là phần mối hàn ở thạch anh
 ## LCD không sáng back light
 Trên LCD, các bạn hãy hàn mạch chân Anot(A)với nguồn 5V, chân Katot(K) với đất GND. Nên nối luôn trên mạch LCD vì nếu nối trên board sẽ làm giảm tính thẩm mỹ, điều đó làm thầy cô không vui :D 
-<img src="https://github.com/leduynhat/Project2_DTVT_DHBKHN_2020/photos/lcd.jpg">
+<img src="photos/lcd.jpg">
 

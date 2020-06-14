@@ -28,6 +28,12 @@ https://drive.google.com/file/d/10oluqVDh33vJdvhIH5wNsJM9OomuUOwH/view?usp=shari
 3. Ấn build (F7) 
 4. Cắm usb và máy tính, kết nối phần header còn lại với kit đông thời mở Progisp lên
 5. Làm theo hướng dẫn nạp code tại đây: http://dammedientu.vn/huong-dan-cach-nap-chuong-trinh-cho-atmega8-16-32-voi-mach-nap-usbisp-bid13-html/
+# Kết quả
+1. LED dẹt và LED 7 thanh
+
+2. Nút nhấn
+
+3. ADC và LCD
 
 # Lỗi thường gặp
 ## Nạp code mà mạch không chạy

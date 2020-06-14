@@ -30,10 +30,11 @@ https://drive.google.com/file/d/10oluqVDh33vJdvhIH5wNsJM9OomuUOwH/view?usp=shari
 5. Làm theo hướng dẫn nạp code tại đây: http://dammedientu.vn/huong-dan-cach-nap-chuong-trinh-cho-atmega8-16-32-voi-mach-nap-usbisp-bid13-html/
 # Kết quả
 1. LED dẹt và LED 7 thanh
-
+<img src="photos/1.jpg">
 2. Nút nhấn
-
+<img src="photos/2.jpg">
 3. ADC và LCD
+<img src="photos/3.jpg">
 
 # Lỗi thường gặp
 ## Nạp code mà mạch không chạy

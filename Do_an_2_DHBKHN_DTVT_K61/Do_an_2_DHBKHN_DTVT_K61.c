@@ -26,8 +26,8 @@ int main(void)
 	//Do phan nay minh su dung code cua thay khong chay, nen minh da tu code lai
 	//su dung ham PORT_new() thay vi PORT()
 	
-	INIT();
-	PORT_new();
+	//INIT();
+	//PORT_new();
 	//PORT();
 
 	
@@ -47,7 +47,7 @@ int main(void)
 	//web tren de su dung
 	
 	//LCD_test(); //ham nay dung de test mam LCD
-	//ADC_2_LCD_new();
+	ADC_2_LCD_new();
 	
 	return 0;
 }

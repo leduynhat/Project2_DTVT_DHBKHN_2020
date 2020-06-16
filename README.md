@@ -28,8 +28,8 @@ https://drive.google.com/file/d/10oluqVDh33vJdvhIH5wNsJM9OomuUOwH/view?usp=shari
 3. Ấn build (F7) 
 4. Cắm usb và máy tính, kết nối phần header còn lại với kit đông thời mở Progisp lên
 5. Cài đặt như hình dưới đây
-<img src='photos/napcode.jpg')
-<img src='photos/napcode1.jpg')  
+<img src='photos/napcode.jpg'>
+<img src='photos/napcode1.jpg'>  
 Nhấn Load file, vào thư mục debug của project rồi chọn vào file hex.  
 <img src='photos/load.jpg'>
 <img src='photos/code.jpg'>

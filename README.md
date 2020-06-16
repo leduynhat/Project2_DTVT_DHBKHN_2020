@@ -10,7 +10,7 @@
 - SPI usb for AVR
 - ATmega16 hoặc ATmega32 hoặc ATmega8  
 
-Kít phát triển được cung cấp bởi phòng thực hành bộ môn. Các bạn hãy hàn và kiểm tra cẩn thận. Nhớ để nhiệt độ mối hàn vừa phải đừng vượt quá 350 độ (do chất lượng PCB không được tốt nên phần via dễ bị bong tróc trong khi hàn). 
+Kít phát triển được cung cấp bởi phòng thực hành bộ môn. Các bạn hãy hàn và kiểm tra cẩn thận. Nhớ để nhiệt độ mối hàn vừa phải đừng vượt quá 360 độ (do chất lượng PCB không được tốt nên phần via dễ bị bong tróc trong khi hàn). 
  Chip Atmega thì bạn có thể chọn một trong 3 loại trên do chân chúng giống nhau, chỉ khác về dung lượng bộ nhớ flash và RAM. Nêu bạn là sinh viên nghèo và có sẵn một trong 3 con trên thì nên dùng luôn
 ## AVR studio code 
  Mình sử dụng phiên bản 5.1 do nó miễn phí, có nhiều hỗ trợ trong mô phỏng, edit code mặc dù nó nặng hơn (khoảng 1GB). Các bạn có thể sử dụng phiên bản 4. được thầy cô cung cấp.

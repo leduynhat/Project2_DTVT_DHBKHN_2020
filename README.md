@@ -23,20 +23,33 @@ Kít phát triển được cung cấp bởi phòng thực hành bộ môn. Các
 https://drive.google.com/file/d/10oluqVDh33vJdvhIH5wNsJM9OomuUOwH/view?usp=sharing
  
 ## Sử dụng
-1. Clone code từ repo này
-2. Mở ứng dụng AVR studio code lên open->'AVR_Kit_Test.cproj'
+1. Clone git từ repo này
+2. Mở ứng dụng AVR studio code lên open->'../Do_an_2_DHBKHN_DTVT_K61/Do_an_2_DHBKHN_DTVT_K61.cproj'
 3. Ấn build (F7) 
 4. Cắm usb và máy tính, kết nối phần header còn lại với kit đông thời mở Progisp lên
-5. Làm theo hướng dẫn nạp code tại đây: http://dammedientu.vn/huong-dan-cach-nap-chuong-trinh-cho-atmega8-16-32-voi-mach-nap-usbisp-bid13-html/
+5. Cài đặt như hình dưới đây
+<img src='photos/napcode.jpg')
+<img src='photos/napcode1.jpg')  
+Nhấn Load file, vào thư mục debug của project rồi chọn vào file hex.  
+<img src='photos/load.jpg'>
+<img src='photos/code.jpg'>
+Sau khi set up xong thì ấn nút Auto. Chú ý rằng các bạn chỉ cần set up một lần, mỗi khi build lại code thì file hex sẽ được tự động cập nhật nhé.
+Hoặc các bạn có thể tham khảo theo hướng dẫn nạp code tại đây: http://dammedientu.vn/huong-dan-cach-nap-chuong-trinh-cho-atmega8-16-32-voi-mach-nap-usbisp-bid13-html/
+
 # Kết quả
 1. LED dẹt và LED 7 thanh
-<img src="photos/1.jpg">
-2. Nút nhấn
 <img src="photos/2.jpg">
+2. Nút nhấn
+<img src="photos/1.jpg">
 3. ADC và LCD
 <img src="photos/3.jpg">
 
 # Lỗi thường gặp
+## Không nạp được code
+Lỗi này thường xảy ra khi các bạn mới nạp code avr lần đầu. Đừng lo lắng quá vì ai cũng gặp lỗi này lần đầu trong đời  
+<img src='photos/loi.png'>  
+Thường là cho nguồn xung do thạch anh cung cấp có vấn đề hoặc là bạn đã set bit puse chưa đúng. Cách khắc phục là hãy kiểm tra lại xem thạch anh đã hàn đúng chưa. Nếu không được nữa thì tham khảo link sau: https://linhkienthaomay.com/huong-dan-DIY/17_H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-s%C6%B0a-l%E1%BB%97i-khi-set-Fuse-Bit-avr-sai.html
+
 ## Nạp code mà mạch không chạy
  Kiểm tra lại các mối hàn, đặc biệt là phần mối hàn ở thạch anh
 ## LCD không sáng back light

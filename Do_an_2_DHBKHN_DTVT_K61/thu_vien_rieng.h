@@ -16,6 +16,8 @@
 #define RS PD6				/* Define Register Select (data/command reg.)pin */
 #define RW PD5					/* Define Read/Write signal pin */
 #define EN PD7					/* Define Enable signal pin */
+#define BAUD_PRESCALE (((F_CPU / (USART_BAUDRATE * 16UL))) - 1)
+
  
 
 void INIT();
@@ -176,7 +178,7 @@ void UART()
 	LCD4_INIT(0,0);
 	
 	LCD4_CUR_GOTO(1,0);
-	LCD4_OUT_STR("Tran Dan, 201xxxxx, DTVT0x-k6x");
+	LCD4_OUT_STR("Le Duy Nhat, 20163037, DTVT07-K61");
 	LCD4_CUR_GOTO(2,0);
 	LCD4_OUT_STR("Vien DTVT, Truong DHBK Ha Noi");
 	
@@ -195,7 +197,8 @@ void UART()
 		UART_TRAN_BYTE(13);
 		UART_TRAN_BYTE(10);
 		
-		DELAY_MS(1000);
+		//DELAY_MS(1000);
+		_delay_ms(1000);
 		
 		LCD4_DIS_SHIFT(1, 1);
 	}
@@ -297,28 +300,31 @@ void LCD_Clear()
 	LCD_Command (0x01);		/* clear display */
 	LCD_Command (0x80);		/* cursor at home position */
 }
-void LCD_test(){
+void LCD_shift(){
 	int shift,i;
-
+	char first_line[] = "Le Duy Nhat, 20163037, DTVT07-K61";
+	char second_line[] = "Vien Dien tu-Vien Thong, Truong DHBKHN";
 	LCD_Init();		/* Initialize LCD*/
-	LCD_String("I <3 HUST");/* Write string on 1st line of LCD*/
-    LCD_String_xy(1,1, "Le Duy Nhat");
-		shift = 12;	/* Number of time shifts count=15 */
-		while(1)
+	LCD_String(first_line);/* Write string on 1st line of LCD*/
+    LCD_String_xy(1,0, second_line);
+	shift = 30;	/* Number of time shifts count=30 */
+	_delay_ms(1000);
+	
+	while(1)
+	{
+		for(i=0;i<shift;i++)
 		{
-			for(i=0;i<shift;i++)
-			{
-				LCD_Command(0x1c);/* shift entire display right */
-				_delay_ms(500);
-			}			
-			shift=30;/* number of time shifts 30 */
+			LCD_Command(0x1c);/* shift entire display right */
+			_delay_ms(1000);
+		}			
+		shift=30;/* number of time shifts 30 */
 			
-			for(i=0;i<30;i++)
-			{
-				LCD_Command(0x18);/* shift entire display left */
-				_delay_ms(500);
-			}
+		for(i=0;i<30;i++)
+		{
+			LCD_Command(0x18);/* shift entire display left */
+			_delay_ms(1000);
 		}
+	}
 }
 
 
@@ -363,6 +369,38 @@ void ADC_2_LCD_new(){
 		itoa(value,String,10);	/* Integer to string conversion */ 
 		LCD_String_xy(1, 6, String);						
 		_delay_ms(500);
+	}
+}
+
+
+void UART_init(long USART_BAUDRATE)
+{
+	UCSRB |= (1 << RXEN) | (1 << TXEN);/* Turn on transmission and reception */
+	UCSRC |= (1 << URSEL) | (1 << UCSZ0) | (1 << UCSZ1);/* Use 8-bit character sizes */
+	UBRRL = BAUD_PRESCALE;		/* Load lower 8-bits of the baud rate value */
+	UBRRH = (BAUD_PRESCALE >> 8);	/* Load upper 8-bits*/
+}
+
+unsigned char UART_RxChar()
+{
+	while ((UCSRA & (1 << RXC)) == 0);/* Wait till data is received */
+	return(UDR);			/* Return the byte*/
+}
+
+void UART_TxChar(char ch)
+{
+	while (! (UCSRA & (1<<UDRE)));	/* Wait for empty transmit buffer*/
+	UDR = ch ;
+}
+
+void UART_SendString(char *str)
+{
+	unsigned char j=0;
+	
+	while (str[j]!=0)		/* Send string till null */
+	{
+		UART_TxChar(str[j]);	
+		j++;
 	}
 }
 #endif /* THU_VIEN_RIENG_H_ */

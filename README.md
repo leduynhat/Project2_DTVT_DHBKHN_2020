@@ -1,17 +1,20 @@
 # Project2_DTVT_DHBKHN_2020
- Đây là tài liệu code avr cho đồ án II viện Điên tử Viễn thông thuộc đại học Bach khoa Hà Nội năm 2020.
+ Đây là tài liệu code avr cho đồ án II viện Điên tử Viễn thông thuộc đại học Bách khoa Hà Nội năm 2020.
 # Giới thiệu
  13/06/2020  
 Đây là git repo chứa dữ liệu đồ án 2 viện Điện tử viễn thông thuộc đại học Bách Khoa Hà Nội. Nôi dung đồ án 2 này mới được áp dụng từ năm 2019. 
  Code được cung cấp từ hướng dẫn và có chỉnh sửa lại một chút do thói quen code của và lỗi mình phát hiện được.
 # Chuẩn bị
 ## Phần cứng 
-- AVR development kit 
-- SPI usb for AVR
-- ATmega16 hoặc ATmega32 hoặc ATmega8  
-
-Kít phát triển được cung cấp bởi phòng thực hành bộ môn. Các bạn hãy hàn và kiểm tra cẩn thận. Nhớ để nhiệt độ mối hàn vừa phải đừng vượt quá 360 độ (do chất lượng PCB không được tốt nên phần via dễ bị bong tróc trong khi hàn). 
- Chip Atmega thì bạn có thể chọn một trong 3 loại trên do chân chúng giống nhau, chỉ khác về dung lượng bộ nhớ flash và RAM. Nêu bạn là sinh viên nghèo và có sẵn một trong 3 con trên thì nên dùng luôn
+- AVR development kit (Được cung cấp)
+- USB ISP for AVR (mua khoảng 70k) cho việc nạp code
+- LCD 1602 (mua khoảng 50k) cho bài tập hiển thị LCD
+- USB UART (mua khoảng 60k) cho bài 3.5 giao tiếp với cồng COM máy tính
+- ATmega16 hoặc ATmega32 hoặc ATmega8  (mua khoảng 55k)
+- Mua thêm sensor hoặc motor cho phần bài tập mở rộng (mình sẽ update sau)
+Kít phát triển được cung cấp bởi phòng thực hành bộ môn. Các bạn hãy hàn và kiểm tra cẩn thận. Nhớ để nhiệt độ mối hàn vừa phải đừng vượt quá 400 độ (do chất lượng PCB không được tốt nên phần via dễ bị bong tróc trong khi hàn). 
+ Chip Atmega thì bạn có thể chọn một trong 3 loại trên do chân chúng giống nhau, chỉ khác về dung lượng bộ nhớ flash và RAM. Nêu bạn là sinh viên nghèo và có sẵn một trong 3 con trên thì nên dùng luôn.  
+ 
 ## AVR studio code 
  Mình sử dụng phiên bản 5.1 do nó miễn phí, có nhiều hỗ trợ trong mô phỏng, edit code mặc dù nó nặng hơn (khoảng 1GB). Các bạn có thể sử dụng phiên bản 4. được thầy cô cung cấp.
  Link tải tại trang chủ:
@@ -25,9 +28,10 @@ https://drive.google.com/file/d/10oluqVDh33vJdvhIH5wNsJM9OomuUOwH/view?usp=shari
 ## Sử dụng
 1. Clone git từ repo này
 2. Mở ứng dụng AVR studio code lên open->'../Do_an_2_DHBKHN_DTVT_K61/Do_an_2_DHBKHN_DTVT_K61.cproj'
-3. Ấn build (F7) 
-4. Cắm usb và máy tính, kết nối phần header còn lại với kit đông thời mở Progisp lên
-5. Cài đặt như hình dưới đây
+3. Comment phần code không dùng đến trong hàm main (mình đã chia phần code ra rồi). Và uncomment phần code sử dụng cho mỗi bài.
+4. Ấn build (F7) 
+5. Cắm usb ISP vào máy tính, kết nối phần header còn lại với kit đông thời mở Progisp lên
+6. Cài đặt như hình dưới đây
 <img src='photos/napcode.jpg'>
 <img src='photos/napcode2.jpg'>  
 Nhấn Load file, vào thư mục debug của project rồi chọn vào file hex.  
@@ -43,6 +47,7 @@ Hoặc các bạn có thể tham khảo theo hướng dẫn nạp code tại đ�
 <img src="photos/1.jpg">
 3. ADC và LCD
 <img src="photos/3.jpg">
+4. Giao tiếp với máy tính quá USB UART
 
 # Lỗi thường gặp
 ## Không nạp được code

@@ -11,8 +11,8 @@
 - LCD 1602 (mua khoảng 50k) cho bài tập hiển thị LCD
 - USB UART (mua khoảng 60k) cho bài 3.5 giao tiếp với cồng COM máy tính
 - ATmega16 hoặc ATmega32 hoặc ATmega8  (mua khoảng 55k)
-- Mua thêm sensor hoặc motor cho phần bài tập mở rộng (mình sẽ update sau)
-Kít phát triển được cung cấp bởi phòng thực hành bộ môn. Các bạn hãy hàn và kiểm tra cẩn thận. Nhớ để nhiệt độ mối hàn vừa phải đừng vượt quá 400 độ (do chất lượng PCB không được tốt nên phần via dễ bị bong tróc trong khi hàn). 
+- Mua thêm sensor hoặc motor cho phần bài tập mở rộng (mình sẽ update sau)  
+Kit phát triển được cung cấp bởi phòng thực hành bộ môn. Các bạn hãy hàn và kiểm tra cẩn thận. Nhớ để nhiệt độ mối hàn vừa phải đừng vượt quá 400 độ (do chất lượng PCB không được tốt nên phần via dễ bị bong tróc trong khi hàn).  
  Chip Atmega thì bạn có thể chọn một trong 3 loại trên do chân chúng giống nhau, chỉ khác về dung lượng bộ nhớ flash và RAM. Nêu bạn là sinh viên nghèo và có sẵn một trong 3 con trên thì nên dùng luôn.  
  
 ## AVR studio code 
@@ -33,7 +33,8 @@ https://drive.google.com/file/d/10oluqVDh33vJdvhIH5wNsJM9OomuUOwH/view?usp=shari
 5. Cắm usb ISP vào máy tính, kết nối phần header còn lại với kit đông thời mở Progisp lên
 6. Cài đặt như hình dưới đây
 <img src='photos/napcode.jpg'>
-<img src='photos/napcode2.jpg'>  
+Ấn nút Read để đọc những pulse bit đang được set ở vi điều khiển, rồi xét lại như hình, sau đó nhấn Write để ghi lại vào vi điều khiển.
+<img src='photos/pulse.jpg'>  
 Nhấn Load file, vào thư mục debug của project rồi chọn vào file hex.  
 <img src='photos/load.jpg'>
 <img src='photos/code.jpg'>

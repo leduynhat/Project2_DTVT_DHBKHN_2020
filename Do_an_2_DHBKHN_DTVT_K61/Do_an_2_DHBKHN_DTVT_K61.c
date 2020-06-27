@@ -18,6 +18,8 @@
 #include "hunget_uart.h"
 #include "thu_vien_rieng.h"
 
+unsigned char push_button = 0;
+
 int main(void)
 {
 	/************************************************************************/
@@ -26,9 +28,9 @@ int main(void)
 	//Do phan nay minh su dung code cua thay khong chay, nen minh da tu code lai
 	//su dung ham PORT_new() thay vi PORT()
 	
-	//INIT();
-	//PORT_new();
-	//PORT();
+	INIT();
+	PORT_new();
+	PORT();
 
 	
 	/************************************************************************/
@@ -36,8 +38,8 @@ int main(void)
 	/************************************************************************/
 	
 	//INIT();
-	//uint8_t *button;
-	//PB_2_LED(&button);
+	////uint8_t *button;
+	//PB_2_LED();
 
 	
 	/************************************************************************/
@@ -53,24 +55,24 @@ int main(void)
 	/************************************************************************/
 	
 	//LCD init
-	char first_line[] = "Le Duy Nhat, 20163037, DTVT07-K61";
-	char second_line[] = "Vien Dien tu-Vien Thong, Truong DHBKHN";
-	LCD_Init();		/* Initialize LCD*/
-	LCD_String(first_line);/* Write string on 1st line of LCD*/
-    LCD_String_xy(1,0, second_line);
-	_delay_ms(1000);
-	
+	//char first_line[] = "Le Duy Nhat, 20163037, DTVT07-K61";
+	//char second_line[] = "Vien Dien tu-Vien Thong, Truong DHBKHN";
+	//LCD_Init();		/* Initialize LCD*/
+	//LCD_String(first_line);/* Write string on 1st line of LCD*/
+    //LCD_String_xy(1,0, second_line);
+	//_delay_ms(1000);
+	//
 	//UART init
 	
-	UART_init(9600);
+	//UART_init(9600);
 	
-	while(1)
-	{
-		UART_SendString(first_line);
-		UART_SendString("\n"); //newline
-		UART_SendString(second_line);
-		LCD_Command(0x18);/* shift entire display left */
-		_delay_ms(1000);
-	}
-	return 0;
+	//while(1)
+	//{
+		//UART_SendString(first_line);
+		//UART_SendString("\n"); //newline
+		//UART_SendString(second_line);
+		//LCD_Command(0x1C);/* shift entire display left */
+		//_delay_ms(1000);
+	//}
+	//return 0;
 }

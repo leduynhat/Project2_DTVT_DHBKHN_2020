@@ -18,7 +18,7 @@
 #define EN PD7					/* Define Enable signal pin */
 #define BAUD_PRESCALE (((F_CPU / (USART_BAUDRATE * 16UL))) - 1)
 
- 
+unsigned char push_button;
 
 void INIT();
 void PORT();
@@ -67,14 +67,14 @@ void PORT()
 	{
 		PORTD = led_shift;
 		if(led_shift != 0)
-			led_shift = led_shift << 1;
+			led_shift = led_shift << 2;
 		else
 			led_shift = 0xFF;
 		LED7_OUT(led_7_count);
 		
 		PORTC ^= (1 << PC3);
-		led_7_count += 1;
-		if (led_7_count > 9)
+		led_7_count += 2;
+		if (led_7_count > 8)
 		{
 			led_7_count = 0;
 		}
@@ -112,13 +112,13 @@ void DELAY_MS(unsigned int mili_count)
 			//NULL
 		}
 }
-void PB_2_LED(uint8_t *push_but)
+void PB_2_LED()
 {
 	for(;;)
 	{
-		*push_but = PB_CHECK();
-		LED7_OUT(*push_but);
-		switch(*push_but)
+		push_button = PB_CHECK();
+		LED7_OUT(push_button);
+		switch(push_button)
 		{
 			case 1: PORTD = 0b11111100; break;	
 			case 2: PORTD = 0b11110011; break;	
@@ -144,7 +144,7 @@ uint8_t PB_CHECK()
 		if(!(PINB & (1<<PB3)))
 			return 4;
 	}
-	return 0;
+	return push_button;
 }
 void ADC_2_LCD()
 {
@@ -234,15 +234,15 @@ void PORT_new(){
     uint8_t led_shift = 0xFF;
     while(1)
     {
-		for(int i=0;i<10;i++)
+		for(int i=0;i<5;i++)
 		{
 			PORTD = led_shift;
 			if(led_shift != 0 && i < 8)
-				led_shift = led_shift << 1;
+				led_shift = led_shift << 2;
 			else
 				led_shift = 0xFF;
 			
-			PORTC = array[i]; /* write data on to the LED port */
+			PORTC = array[2*i]; /* write data on to the LED port */
 			_delay_ms(1000); /* wait for 1 second */ 
 		}	
     }

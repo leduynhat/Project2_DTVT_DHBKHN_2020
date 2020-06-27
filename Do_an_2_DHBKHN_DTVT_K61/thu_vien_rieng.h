@@ -22,9 +22,7 @@ unsigned char push_button;
 
 void INIT();
 void PORT();
-void PORT_new();
 void LED7_OUT(uint8_t num);
-void LED7_OUT_new(uint8_t num);
 void DELAY_MS(unsigned int mili_count);
 void PB_2_LED();
 uint8_t PB_CHECK();
@@ -33,6 +31,9 @@ void ADC_2_LCD_new();
 void UART();
 void LCD4_DIS_SHIFT(unsigned char lcd4_direct, unsigned char lcd4_step);
 
+
+void PORT_new();
+void LED7_OUT_new(uint8_t num);
 void LCD_Command(unsigned char cmnd);
 void LCD_Char (unsigned char char_data);	/* LCD data write function */
 void LCD_Init (void);			/* LCD Initialize function */
@@ -41,6 +42,10 @@ void LCD_String_xy (char row, char pos, char *str)/* Send string to LCD with xy 
 void LCD_Clear();
 void LCD_test();
 
+
+/************************************************************************/
+/* Ham duoc cac thay co cung cap san                                    */
+/************************************************************************/
 void INIT()
 {
 	//Khai bao trang thai output cho 8 chan led det
@@ -213,6 +218,11 @@ void LCD4_DIS_SHIFT(unsigned char lcd4_direct, unsigned char lcd4_step)
 		for(i = 0; i< lcd4_step; i++)
 			LCD4_OUT_CMD(0x18);
 }
+
+
+/************************************************************************/
+/* Ham moi do minh them vao                                             */
+/************************************************************************/
 void LED7_OUT_new(uint8_t num)
 {
 

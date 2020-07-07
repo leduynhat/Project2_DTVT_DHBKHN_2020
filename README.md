@@ -34,7 +34,7 @@ https://drive.google.com/file/d/10oluqVDh33vJdvhIH5wNsJM9OomuUOwH/view?usp=shari
 5. Cắm usb ISP vào máy tính, kết nối phần header còn lại với kit đông thời mở Progisp lên
 6. Cài đặt như hình dưới đây
 <img src='photos/napcode.jpg'>
-Ấn nút Read để đọc những pulse bit đang được set ở vi điều khiển, rồi xét lại như hình, sau đó nhấn Write để ghi lại vào vi điều khiển.
+Ấn nút Read để đọc những fuse bit đang được set ở vi điều khiển, rồi xét lại như hình, sau đó nhấn Write để ghi lại vào vi điều khiển.
 <img src='photos/pulse.jpg'>  
 Nhấn Load file, vào thư mục debug của project rồi chọn vào file hex.  
 <img src='photos/load.jpg'>
@@ -59,7 +59,7 @@ Kết quả hiển thị trên Putty
 # Lỗi thường gặp
 
 ## Nạp được code nhưng LED 7 đoạn không sáng đủ  
-Nạp code ngon lành nhưng chạy thì một số thanh LED lại không sáng. Có hai lý do: thứ nhất là hàn chưa dính thiếc; thứ hai là bạn chưa puse bit đúng.
+Nạp code ngon lành nhưng chạy thì một số thanh LED lại không sáng. Có hai lý do: thứ nhất là hàn chưa dính thiếc; thứ hai là bạn chưa fuse bit đúng.
 Hãy kiểm tra lại mối hàn chỗ LED 7 thanh rồi kiểm tra lại việc puse bit. Một số bạn bị lỗi này rồi thì 90% là do puse bit chưa đúng. Hãy chắc chắn mình puse bit như trên nhé.
 ## Không nạp được code
 Lỗi này thường xảy ra khi các bạn mới nạp code avr lần đầu. Đừng lo lắng quá vì ai cũng gặp lỗi này lần đầu trong đời  
@@ -72,3 +72,10 @@ Thường là cho nguồn xung do thạch anh cung cấp có vấn đề hoặc 
 Trên LCD, các bạn hãy hàn mạch chân Anot(A)với nguồn 5V, chân Katot(K) với đất GND. Nên nối luôn trên mạch LCD vì nếu nối trên board sẽ làm giảm tính thẩm mỹ, điều đó làm thầy cô không vui :D 
 <img src="photos/lcd.jpg">
 
+# Một số câu hỏi kiểm tra
+
+## Đếm số chẵn hoặc lẻ thay vì lần lượt
+
+## Cho LCD dịch trái dịch phải
+
+## Đổi code bài nút nhấn

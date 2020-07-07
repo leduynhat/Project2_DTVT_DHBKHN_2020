@@ -244,15 +244,15 @@ void PORT_new(){
     uint8_t led_shift = 0xFF;
     while(1)
     {
-		for(int i=0;i<5;i++)
+		for(int i=0;i<10;i++)
 		{
 			PORTD = led_shift;
 			if(led_shift != 0 && i < 8)
-				led_shift = led_shift << 2;
+				led_shift = led_shift << 1;
 			else
 				led_shift = 0xFF;
 			
-			PORTC = array[2*i]; /* write data on to the LED port */
+			PORTC = array[i]; /* write data on to the LED port */
 			_delay_ms(1000); /* wait for 1 second */ 
 		}	
     }
@@ -340,7 +340,7 @@ void LCD_shift(){
 
 void ADC_Init()
 {
-	DDRA=0x0;			/* Make ADC port as input */
+	DDRA=0x00;			/* Make ADC port as input */
 	ADCSRA = 0x87;			/* Enable ADC, fr/128  */
 	ADMUX = 0x40;			/* Vref: Avcc, ADC channel: 0 */
 	

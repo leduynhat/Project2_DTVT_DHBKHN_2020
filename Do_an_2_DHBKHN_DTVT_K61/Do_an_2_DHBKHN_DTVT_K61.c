@@ -73,5 +73,60 @@ int main(void)
 	/************************************************************************/
 	/* Bai tap mo rong dieu khien dong co                                   */
 	/************************************************************************/
+	uint8_t count = 65;
 	
+	DDRD |= (1<<PD5);	/* Make OC1A pin as output */ 
+	TCNT1 = 0;		/* Set timer1 count zero */
+	ICR1 = 2499;		/* Set TOP count for timer1 in ICR1 register */
+
+	/* Set Fast PWM, TOP in ICR1, Clear OC1A on compare match, clk/64 */
+	TCCR1A = (1<<WGM11)|(1<<COM1A1);
+	TCCR1B = (1<<WGM12)|(1<<WGM13)|(1<<CS10)|(1<<CS11);
+	while(1)
+	{
+		push_button = PB_CHECK();
+		LED7_OUT(push_button);
+		switch(push_button)
+		{
+			case 1: OCR1A = 65;	/* Set servo shaft at -90° position */
+					_delay_ms(100);
+					break;	
+			case 2: OCR1A = 300;	/* Set servo shaft at -90° position */
+					_delay_ms(100);
+					break;	
+			case 3: if(OCR1A >= 65 && OCR1A <= 290)
+					{
+						//count += 10; 
+						OCR1A += 10; 
+						_delay_ms(100);
+						break;
+					}
+					else
+					{
+						_delay_ms(100);
+						break;
+					}		
+					break;				
+			case 4: if(OCR1A >= 75 && OCR1A <= 300)
+					{
+						//count -= 10; 
+						OCR1A -= 10; 
+						_delay_ms(100);
+						break;
+					}
+					else
+					{
+						_delay_ms(100);
+						break;
+					}
+					break;			
+			//default: break;	
+			//case 1: count = 65;  break;
+			//case 2: count = 300; break;
+			//default: break;
+		}
+		//OCR1A = count;
+		//_delay_ms(2000);
+	}
+	return 0;
 }

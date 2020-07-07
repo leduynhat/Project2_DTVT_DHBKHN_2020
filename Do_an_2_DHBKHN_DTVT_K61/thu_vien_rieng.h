@@ -149,7 +149,7 @@ uint8_t PB_CHECK()
 		if(!(PINB & (1<<PB3)))
 			return 4;
 	}
-	return push_button;
+	return 0;
 }
 void ADC_2_LCD()
 {

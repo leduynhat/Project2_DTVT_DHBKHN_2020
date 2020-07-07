@@ -1,5 +1,6 @@
 # Project2_DTVT_DHBKHN_2020
- Đây là tài liệu code avr cho đồ án II viện Điên tử Viễn thông thuộc đại học Bách khoa Hà Nội năm 2020.
+ Đây là tài liệu code avr cho đồ án II viện Điên tử Viễn thông thuộc đại học Bách khoa Hà Nội năm 2020.  
+ Chú ý đọc thật kỹ những gì mình ghi trong README này trước khi thực hiện nhé. Tài liệu này ngắn nhưng có đủ những thứ các bạn cần lưu ý.
 # Giới thiệu
  13/06/2020  
 Đây là git repo chứa dữ liệu đồ án 2 viện Điện tử viễn thông thuộc đại học Bách Khoa Hà Nội. Nôi dung đồ án 2 này mới được áp dụng từ năm 2019. 
@@ -9,7 +10,7 @@
 - AVR development kit (Được cung cấp)
 - USB ISP for AVR (mua khoảng 70k) cho việc nạp code
 - LCD 1602 (mua khoảng 50k) cho bài tập hiển thị LCD
-- USB UART (mua khoảng 60k) cho bài 3.5 giao tiếp với cồng COM máy tính
+- USB UART (mua khoảng 60k) cho bài 3.5 giao tiếp với cồng COM máy tính mình sử dụng CP2012 USB-TTL BOARD V3.0
 - ATmega16 hoặc ATmega32 hoặc ATmega8  (mua khoảng 55k)
 - Mua thêm sensor hoặc motor cho phần bài tập mở rộng (mình sẽ update sau)  
 Kit phát triển được cung cấp bởi phòng thực hành bộ môn. Các bạn hãy hàn và kiểm tra cẩn thận. Nhớ để nhiệt độ mối hàn vừa phải đừng vượt quá 400 độ (do chất lượng PCB không được tốt nên phần via dễ bị bong tróc trong khi hàn).  
@@ -49,7 +50,12 @@ Hoặc các bạn có thể tham khảo theo hướng dẫn nạp code tại đ�
 3. ADC và LCD
 <img src="photos/3.jpg">
 4. Giao tiếp với máy tính quá USB UART
-
+Để giao tiếp UART với máy tính qua USB các bạn cần một chương trình giao tiếp. Các bạn có thể dùng monitor của Arduino IDE hoặc Putty. Hai cách này mình thử qua đề ổn. Ở đây mình sử dụng Putty. Các bạn hãy tra google để cài đặt driver cho CP2012 USB và phần mềm giao tiếp nhé.  
+Có 4 chân của USB UART cần nối với mạch là chân 5V, GND, TX và RX. Chú ý rằng TX của USB nối với RX của kit và RX của kit nối với TX của USB. Sau khi nối xong thì chỉ cần cắm USB vào máy tính là nguồn sẽ được tự cấp nhé.
+<img src="photos/putty.jpg">
+Kết quả hiển thị trên Putty
+<img src="photos/putty2.jpg">
+Kết qua
 # Lỗi thường gặp
 ## Không nạp được code
 Lỗi này thường xảy ra khi các bạn mới nạp code avr lần đầu. Đừng lo lắng quá vì ai cũng gặp lỗi này lần đầu trong đời  

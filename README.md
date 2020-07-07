@@ -55,15 +55,19 @@ Có 4 chân của USB UART cần nối với mạch là chân 5V, GND, TX và RX
 <img src="photos/putty.jpg">
 Kết quả hiển thị trên Putty
 <img src="photos/putty2.jpg">
-Kết qua
+
 # Lỗi thường gặp
+
+## Nạp được code nhưng LED 7 đoạn không sáng đủ  
+Nạp code ngon lành nhưng chạy thì một số thanh LED lại không sáng. Có hai lý do: thứ nhất là hàn chưa dính thiếc; thứ hai là bạn chưa puse bit đúng.
+Hãy kiểm tra lại mối hàn chỗ LED 7 thanh rồi kiểm tra lại việc puse bit. Một số bạn bị lỗi này rồi thì 90% là do puse bit chưa đúng. Hãy chắc chắn mình puse bit như trên nhé.
 ## Không nạp được code
 Lỗi này thường xảy ra khi các bạn mới nạp code avr lần đầu. Đừng lo lắng quá vì ai cũng gặp lỗi này lần đầu trong đời  
 <img src='photos/loi.png'>  
 Thường là cho nguồn xung do thạch anh cung cấp có vấn đề hoặc là bạn đã set bit puse chưa đúng. Cách khắc phục là hãy kiểm tra lại xem thạch anh đã hàn đúng chưa. Nếu không được nữa thì tham khảo link sau: https://linhkienthaomay.com/huong-dan-DIY/17_H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-s%C6%B0a-l%E1%BB%97i-khi-set-Fuse-Bit-avr-sai.html
 
 ## Nạp code mà mạch không chạy
- Kiểm tra lại các mối hàn, đặc biệt là phần mối hàn ở thạch anh
+ Kiểm tra lại các mối hàn, đặc biệt là phần mối hàn ở thạch anh.
 ## LCD không sáng back light
 Trên LCD, các bạn hãy hàn mạch chân Anot(A)với nguồn 5V, chân Katot(K) với đất GND. Nên nối luôn trên mạch LCD vì nếu nối trên board sẽ làm giảm tính thẩm mỹ, điều đó làm thầy cô không vui :D 
 <img src="photos/lcd.jpg">

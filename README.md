@@ -51,7 +51,7 @@ Hoặc các bạn có thể tham khảo theo hướng dẫn nạp code tại đ�
 <img src="photos/3.jpg">
 4. Giao tiếp với máy tính quá USB UART
 Để giao tiếp UART với máy tính qua USB các bạn cần một chương trình giao tiếp. Các bạn có thể dùng monitor của Arduino IDE hoặc Putty. Hai cách này mình thử qua đề ổn. Ở đây mình sử dụng Putty. Các bạn hãy tra google để cài đặt driver cho CP2012 USB và phần mềm giao tiếp nhé.  
-Có 4 chân của USB UART cần nối với mạch là chân 5V, GND, TX và RX. Chú ý rằng TX của USB nối với RX của kit và RX của kit nối với TX của USB. Sau khi nối xong thì chỉ cần cắm USB vào máy tính là nguồn sẽ được tự cấp nhé.
+Có 4 chân của USB UART cần nối với mạch là chân 5V, GND, TX và RX. Chú ý rằng TX của USB nối với TX của kit và RX của kit nối với RX của USB (-.- đừng bảo mình k biết gì về UART nhưng mà nối thế nó mới chạy). Sau khi nối xong thì chỉ cần cắm USB vào máy tính là nguồn sẽ được tự cấp nhé.
 <img src="photos/putty.jpg">
 Kết quả hiển thị trên Putty
 <img src="photos/putty2.jpg">

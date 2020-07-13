@@ -78,12 +78,12 @@ void PORT()
 		LED7_OUT(led_7_count);
 		
 		PORTC ^= (1 << PC3);
-		led_7_count += 2;
+		led_7_count += 1;
 		if (led_7_count > 8)
 		{
 			led_7_count = 0;
 		}
-		DELAY_MS(500);
+		DELAY_MS(50);
 	}
 }
 
@@ -234,7 +234,7 @@ void LED7_OUT_new(uint8_t num)
 		for(int i=0;i<10;i++)
 		{
 			PORTC = array[num]; /* write data on to the LED port */
-			DELAY_MS(1000); /* wait for 1 second */ 
+			DELAY_MS(500); /* wait for 1 second */ 
 		}
     }
 }
@@ -244,16 +244,16 @@ void PORT_new(){
     uint8_t led_shift = 0xFF;
     while(1)
     {
-		for(int i=0;i<10;i++)
+		for(int i=0;i<10;i=i+2)
 		{
 			PORTD = led_shift;
 			if(led_shift != 0 && i < 8)
-				led_shift = led_shift << 1;
+				led_shift = led_shift << 2;
 			else
 				led_shift = 0xFF;
 			
 			PORTC = array[i]; /* write data on to the LED port */
-			_delay_ms(1000); /* wait for 1 second */ 
+			_delay_ms(500); /* wait for 1 second */ 
 		}	
     }
 }	

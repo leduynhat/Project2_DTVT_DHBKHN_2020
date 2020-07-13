@@ -73,8 +73,11 @@ int main(void)
 	/************************************************************************/
 	/* Bai tap mo rong dieu khien dong co                                   */
 	/************************************************************************/
-	uint8_t count = 65;
-	
+	uint8_t Do = 0;
+	char *Do_char;
+	LCD_Init();
+	LCD_String_xy(0,0, "Dieu khien servo");
+	LCD_String_xy(1,1, "Goc quay:");
 	DDRD |= (1<<PD5);	/* Make OC1A pin as output */ 
 	TCNT1 = 0;		/* Set timer1 count zero */
 	ICR1 = 2499;		/* Set TOP count for timer1 in ICR1 register */
@@ -82,6 +85,7 @@ int main(void)
 	/* Set Fast PWM, TOP in ICR1, Clear OC1A on compare match, clk/64 */
 	TCCR1A = (1<<WGM11)|(1<<COM1A1);
 	TCCR1B = (1<<WGM12)|(1<<WGM13)|(1<<CS10)|(1<<CS11);
+	OCR1A = 65;
 	while(1)
 	{
 		push_button = PB_CHECK();
@@ -89,38 +93,46 @@ int main(void)
 		switch(push_button)
 		{
 			case 1: OCR1A = 65;	/* Set servo shaft at -90° position */
+					LCD_String_xy(1,11, " 0   ");
 					_delay_ms(100);
+					Do = 0;
 					break;	
-			case 2: OCR1A = 300;	/* Set servo shaft at -90° position */
+			case 2: OCR1A = 320;	/* Set servo shaft at -90° position */
+					LCD_String_xy(1,11, "180  ");
 					_delay_ms(100);
+					Do = 180;
 					break;	
-			case 3: if(OCR1A >= 65 && OCR1A <= 290)
+			case 3: if(OCR1A >= 65 && OCR1A <= 310)
 					{
 						//count += 10; 
 						OCR1A += 10; 
-						_delay_ms(100);
+						Do += 7;
+						//LCD_String_xy(1,11, itoa(Do, Do_char, 10));
+						_delay_ms(200);
 						break;
 					}
 					else
 					{
-						_delay_ms(100);
+						_delay_ms(200);
 						break;
 					}		
 					break;				
-			case 4: if(OCR1A >= 75 && OCR1A <= 300)
+			case 4: if(OCR1A >= 75 && OCR1A <= 320)
 					{
 						//count -= 10; 
-						OCR1A -= 10; 
-						_delay_ms(100);
+						OCR1A -= 10;
+						Do -= 7; 
+						//LCD_String_xy(1,11, itoa(Do, Do_char, 10) );
+						_delay_ms(200);
 						break;
 					}
 					else
 					{
-						_delay_ms(100);
+						_delay_ms(200);
 						break;
 					}
 					break;			
-			//default: break;	
+			//default:break;	
 			//case 1: count = 65;  break;
 			//case 2: count = 300; break;
 			//default: break;

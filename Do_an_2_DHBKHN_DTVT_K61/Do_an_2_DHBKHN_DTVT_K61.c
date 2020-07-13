@@ -74,10 +74,11 @@ int main(void)
 	/* Bai tap mo rong dieu khien dong co                                   */
 	/************************************************************************/
 	uint8_t Do = 0;
-	char *Do_char;
+	char Do_char[6];
 	LCD_Init();
 	LCD_String_xy(0,0, "Dieu khien servo");
 	LCD_String_xy(1,1, "Goc quay:");
+	LCD_String_xy(1,11, " 0   ");
 	DDRD |= (1<<PD5);	/* Make OC1A pin as output */ 
 	TCNT1 = 0;		/* Set timer1 count zero */
 	ICR1 = 2499;		/* Set TOP count for timer1 in ICR1 register */
@@ -105,9 +106,10 @@ int main(void)
 			case 3: if(OCR1A >= 65 && OCR1A <= 310)
 					{
 						//count += 10; 
-						OCR1A += 10; 
-						Do += 7;
-						//LCD_String_xy(1,11, itoa(Do, Do_char, 10));
+						OCR1A += 14; 
+						Do += 10;
+						sprintf(Do_char, "%3d  ", Do);
+						LCD_String_xy(1,11, Do_char );
 						_delay_ms(200);
 						break;
 					}
@@ -120,9 +122,10 @@ int main(void)
 			case 4: if(OCR1A >= 75 && OCR1A <= 320)
 					{
 						//count -= 10; 
-						OCR1A -= 10;
-						Do -= 7; 
-						//LCD_String_xy(1,11, itoa(Do, Do_char, 10) );
+						OCR1A -= 14;
+						Do -= 10; 
+						sprintf(Do_char, "%3d  ", Do);
+						LCD_String_xy(1,11, Do_char );
 						_delay_ms(200);
 						break;
 					}
